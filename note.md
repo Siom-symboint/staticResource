@@ -593,11 +593,14 @@ class Server {
 
 module.exports = Server
 
-
-
 ```
 
+#### 发布到npm
 
+```shell
+npm login
+npm publish
+```
 
 
 
