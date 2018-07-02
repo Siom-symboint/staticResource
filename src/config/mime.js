@@ -484,7 +484,8 @@ const mimetypes = {
   ".z": "application/x-compress",
   ".zac": "application/x-zaurus-zac",
   ".zip": "application/zip",
-  ".json": "application/json"
+  ".json": "application/json",
+  ".md":"text/markdown"
 }
 
 module.exports = (filePath) => {

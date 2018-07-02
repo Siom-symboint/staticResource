@@ -8,10 +8,11 @@
  const tplPath = path.join(__dirname, '../template/dir.tpl')
  const source = fs.readFileSync(tplPath)
  const template = HandleBars.compile(source.toString())
- const mime = require('../config/mime.js')
+//  const mime = require('../config/mime.js')
  const compress = require('../config/compress')
  const range = require('../config/range')
  const isFresh = require('../config/cache')
+ const mime = require('mime-types')
 
  module.exports = async function (req, res, filePath, config) { // 为将defaultConfig做cli可配置化,不再读文件信息,转为server 传入
    try {
@@ -19,7 +20,7 @@
      if (stats.isFile()) {
        // res.setHeader('Content-Type', 'text/plain;charset=utf-8')
 
-       const contentType = mime(filePath)
+       const contentType = mime.lookup(path.extname(filePath).toLowerCase())
        res.setHeader('Content-Type', `${ contentType};charset=utf-8`) //指定下载js文件
        res.setHeader('Access-Control-Allow-Origin', '*')
        res.setHeader("Access-Control-Allow-Methods", "*");
