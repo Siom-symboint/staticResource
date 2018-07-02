@@ -604,17 +604,9 @@ npm publish
 
 
 
-
-
-
-
-
-
-
-
 ```js
 //安装
-npm i -g anydoor 
+npm i -g staticWebServer 
 //使用方法 例
 /**
 *把当前文件夹作为静态资源服务器根目录 
